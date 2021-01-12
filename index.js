@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const Client = new  Discord.Client();
-var cars = ["kos", "kir", "koon"];
+var cars = ["koskesh", "jende", "kir", "kos", "haromi", "lashi", "pedarsag", "nane kose", "khahar jende", "khahar kose"];
 
 var s = 0;
 
@@ -32,7 +32,7 @@ Client.on('message', msg => {
                     if(state === false){
 
                     }else{
-                        msg.channel.send("ff");
+                        msg.channel.send("lotfaa az kalamat rakik estefase nakonid dar gheire in sorat ba shoma barkhord mishavad!");
                         return;
                     }
                 }
