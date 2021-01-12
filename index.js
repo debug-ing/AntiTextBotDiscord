@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const Client = new  Discord.Client();
-var cars = ["kos", "kir", "kon"];
+var cars = ["kos", "kir", "koon"];
 
 var s = 0;
 
