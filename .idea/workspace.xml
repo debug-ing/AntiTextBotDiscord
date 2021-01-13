@@ -19,11 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d6e81a59-c966-4fb1-a578-cf7f55e2900d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rolesController.js" beforeDir="false" />
-    </list>
+    <list default="true" id="d6e81a59-c966-4fb1-a578-cf7f55e2900d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,6 +65,7 @@
       <updated>1610481045746</updated>
       <workItem from="1610481064488" duration="660000" />
       <workItem from="1610482119465" duration="25461000" />
+      <workItem from="1610527641174" duration="38000" />
     </task>
     <servers />
   </component>
@@ -85,6 +82,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="497" y="242" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610489310652">
