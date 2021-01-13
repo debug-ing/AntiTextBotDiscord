@@ -14,6 +14,7 @@ Client.once('ready', () => {
     connection.create(function(db) {
         mysqlcon = db;
         console.log('Iam ready');
+        Client.user.setActivity("All Messages" , {type : "WATCHING"});
     });
 });
 
@@ -99,5 +100,5 @@ Client.on('message', msg => {
 
 
 
-Client.login('Nzk3NTQwNjUyOTg0MDQxNTIz.X_n9nQ.ZCd_26KcRye1ifWhZZC4lrM0was');
+Client.login('');
 
