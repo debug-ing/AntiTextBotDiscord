@@ -10,14 +10,14 @@ I Will update This Project in the Future.
 ## Feature
 
 1.Add Bot for A lot Of Servers<br>
-2.You Can Use this Different Server With Out Any Limition
-3.Add And Remove and Update Block Work for server
-4.You Can See All Block Words This Server
-5.You Can Add Role For Access For Add Block,Remove,Update Words
-6.You Can See All Server That Use This Bot
-7.You Can Start and Stop For Servers
-8.You Can See Ping and Uptime
-9.You Can See Server Info
+2.You Can Use this Different Server With Out Any Limition<br>
+3.Add And Remove and Update Block Work for server<br>
+4.You Can See All Block Words This Server<br>
+5.You Can Add Role For Access For Add Block,Remove,Update Words<br>
+6.You Can See All Server That Use This Bot<br>
+7.You Can Start and Stop For Servers<br>
+8.You Can See Ping and Uptime<br>
+9.You Can See Server Info<br>
 
 ## Donate
 
