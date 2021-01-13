@@ -25,6 +25,13 @@ If you like, You can donate us 😇
 
 Our BTC wallet address : [12dFaoaBHNySGUCaBiih6YSkYQRQdDug8f]()
 
+## contact me
+
+You can contact me via<br>
+Email : mahdi.bl4ck@gmail.com<br>
+Telegram: @debug_ing<br>
+Instagram: @debug_ing<br>
+
 
 ## Contributing
 
