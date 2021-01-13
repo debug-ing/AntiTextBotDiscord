@@ -4,8 +4,13 @@ const connection = require('./utils/connection.js');
 const channelController = require('./controller/channelController.js');
 const antiTextController = require('./controller/antiTextController.js');
 const Client = new  Discord.Client();
+<<<<<<< HEAD
 var mysqlcon;
 var cars = ["kos", "kir", "kon"];
+=======
+var cars = ["koskesh", "jende", "kir", "kos", "haromi", "lashi", "pedarsag", "nane kose", "khahar jende", "khahar kose"];
+
+>>>>>>> 9a6de2b6812db1c13c0b07d8dafe0f9092a5f44b
 var s = 0;
 var key = "$";
 
@@ -53,7 +58,7 @@ Client.on('message', msg => {
                     if(state === false){
 
                     }else{
-                        msg.channel.send("ff");
+                        msg.channel.send("lotfaa az kalamat rakik estefase nakonid dar gheire in sorat ba shoma barkhord mishavad!");
                         return;
                     }
                 }
