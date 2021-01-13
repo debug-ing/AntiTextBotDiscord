@@ -72,7 +72,7 @@ Client.on('message', msg => {
         let minutes = Math.floor(Client.uptime / 60000) % 60;
         let seconds = Math.floor(Client.uptime / 1000) % 60;
         msg.channel.send(`__Uptime:__\n${days}d ${hours}h ${minutes}m ${seconds}s`);
-    }else{
+    } else{
         if (msg.member.hasPermission('ADMINISTRATOR')){
         }else{
             var data = msg.member.roles.cache.map(r => r.id);
@@ -84,6 +84,7 @@ Client.on('message', msg => {
                         if (state === false) {
                         } else {
                             Client.channels.cache.get(msg.channel.id).messages.fetch(msg.id).then(message => message.delete());
+
                             msg.channel.send("lotfaa az kalamat rakik estefase nakonid dar gheire in sorat ba shoma barkhord mishavad!");
                             return;
                         }
