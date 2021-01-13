@@ -3,14 +3,10 @@ const mysql = require('mysql');
 const connection = require('./utils/connection.js');
 const channelController = require('./controller/channelController.js');
 const antiTextController = require('./controller/antiTextController.js');
+const rolesController = require('./controller/rolesController.js');
 const Client = new  Discord.Client();
-<<<<<<< HEAD
 var mysqlcon;
-var cars = ["kos", "kir", "kon"];
-=======
 var cars = ["koskesh", "jende", "kir", "kos", "haromi", "lashi", "pedarsag", "nane kose", "khahar jende", "khahar kose"];
-
->>>>>>> 9a6de2b6812db1c13c0b07d8dafe0f9092a5f44b
 var s = 0;
 var key = "$";
 
@@ -48,22 +44,53 @@ Client.on('message', msg => {
         antiTextController.addText(mysqlcon,msg.guild.id,data[1],function (data) {
             msg.channel.send(data);
         });
-    } else{
-        if(msg.member.roles.cache.some(r => r.name === "IDI")){
+    }else if (msg.content.includes(key + "config")) {
+        if (msg.member.hasPermission('ADMINISTRATOR')){
+            var id = msg.content.split(' ')[1];
+            var roleId = id.replace('<@&', '').replace('>', '');
+            rolesController.config(mysqlcon,msg.guild.id,roleId,function (data) {
+                msg.channel.send(data);
+            });
         }else{
-            if(s === 1){
-                for(var i = 0 ; i <cars.length;i++){
-                    var state = msg.content.includes(cars[i]);
-
-                    if(state === false){
-
-                    }else{
-                        msg.channel.send("lotfaa az kalamat rakik estefase nakonid dar gheire in sorat ba shoma barkhord mishavad!");
-                        return;
+            msg.channel.send("your are not a admin :x:");
+        }
+    }else if(msg.content.includes(key + "addAdmin")){
+        if (msg.member.hasPermission('ADMINISTRATOR')){
+            var id = msg.content.split(' ')[1];
+            var roleId = id.replace('<@&', '').replace('>', '');
+            rolesController.addRoles(mysqlcon,msg.guild.id,roleId,function (data) {
+                msg.channel.send(data);
+            });
+        }else{
+            msg.channel.send("your are not a admin :x:");
+        }
+    }else if(msg.content === key + "ping"){
+        msg.channel.send(`🏓Latency is ${Date.now() - msg.createdTimestamp}ms. API Latency is ${Math.round(Client.ws.ping)}ms`);
+    }else if(msg.content === key + "uptime"){
+        let days = Math.floor(Client.uptime / 86400000);
+        let hours = Math.floor(Client.uptime / 3600000) % 24;
+        let minutes = Math.floor(Client.uptime / 60000) % 60;
+        let seconds = Math.floor(Client.uptime / 1000) % 60;
+        msg.channel.send(`__Uptime:__\n${days}d ${hours}h ${minutes}m ${seconds}s`);
+    }else{
+        if (msg.member.hasPermission('ADMINISTRATOR')){
+        }else{
+            var data = msg.member.roles.cache.map(r => r.id);
+            rolesController.checkMessage(mysqlcon,msg.guild.id,data,function (data) {
+                if (data === true){
+                }else {
+                    for (var i = 0; i < cars.length; i++) {
+                        var state = msg.content.includes(cars[i]);
+                        if (state === false) {
+                        } else {
+                            Client.channels.cache.get(msg.channel.id).messages.fetch(msg.id).then(message => message.delete());
+                            msg.channel.send("lotfaa az kalamat rakik estefase nakonid dar gheire in sorat ba shoma barkhord mishavad!");
+                            return;
+                        }
                     }
                 }
-            }else{
-            }
+            });
+
         }
     }
     
@@ -71,5 +98,5 @@ Client.on('message', msg => {
 
 
 
-Client.login('Nzk3NTQwNjUyOTg0MDQxNTIz.X_n9nQ.AwG1rzj8x7wVdg98r0McEks9tkc');
+Client.login('Nzk3NTQwNjUyOTg0MDQxNTIz.X_n9nQ.ZCd_26KcRye1ifWhZZC4lrM0was');
 
