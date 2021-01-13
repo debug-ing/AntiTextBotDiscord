@@ -1,4 +1,4 @@
-# Anti Text Bot Discord
+# Discord Anti Filter Text Bot
 
 
 Anti Text is  Node js Script for Delete Spam Text With Panel Controller for Add Block Words and Ban,Unban Users
