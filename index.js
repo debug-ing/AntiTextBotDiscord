@@ -6,7 +6,7 @@ const antiTextController = require('./controller/antiTextController.js');
 const rolesController = require('./controller/rolesController.js');
 const Client = new  Discord.Client();
 var mysqlcon;
-var cars = ["koskesh", "jende", "kir", "kos", "haromi", "lashi", "pedarsag", "nane kose", "khahar jende", "khahar kose"];
+var cars = ["koskesh", "jende", "kir", "kos", "haromi", "lashi", "pedarsag", "nane kose", "khaharjende", "khaharkose", "tulesag", "madaratgaidam", "sag", "kiri", "koni", "kon", "bibijende", "gaidam", "bibi", "tole", "nagaidam", "madarsag", "madar", "koskhol", "periud", "gushad", "کیری", "کصکش", "کسکش", "جنده", "کیر", "کص", "حرومی", "لاشی", "پدرسگ", "ننه جنده", "خواهر جنده", "خواهر کصه", "توله سگ", "مادرت گاییدم", "سگ", "کونی", "کون", "بی بی جنده", "گاییدم", "بی بی", "توله", "نگاییدم", "مادرسگ", "مادر", "کصخل", "کسخل", "پریود", "گشاد"];
 var s = 0;
 var key = "$";
 
