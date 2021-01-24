@@ -22,9 +22,10 @@ Client.once('ready', () => {
 Client.on('message', msg => {
     if (msg.channel.type !== 'text' || msg.author.bot)
         return;
-    if (!msg.content.startsWith(key))
-        messageController.messageChecker(connection,msg.content);
+    if (!msg.content.startsWith(key)) {
+        //messageController.messageChecker(connection, msg.content);
         return;
+    }
     let command = msg.content.split(' ')[0].slice(1);
     let args = msg.content.replace('.' + command, '').trim();
     console.log(command);
@@ -67,7 +68,14 @@ Client.on('message', msg => {
             break;
         }
         case "help":{
+            console.log("");
+            const Embed = new Discord.MessageEmbed()
+                .setColor("YELLOW")
+                .setTitle(`TITLE`)
+                .setDescription("``TEXT GOES HERE``")
+                .setFooter("!sugest I would like marshmallows.");
 
+            msg.channel.send(Embed);
             break;
         }
         default: {
@@ -158,5 +166,5 @@ Client.on('message', msg => {
 
 
 
-Client.login('ODAyODg1NzM5NDgxMjY4MjY0.YA1vnQ.zhA83yJ3VzukbU9rNZy4rUVjdj4');
+Client.login('ODAyODg1NzM5NDgxMjY4MjY0.YA1vnQ.2Jpp6CXVKGJCoUwxM8dSeCmtuv0');
 
