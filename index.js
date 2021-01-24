@@ -3,7 +3,8 @@ const mysql = require('mysql');
 const connection = require('./utils/connection.js');
 const channelController = require('./controller/channelController.js');
 const antiTextController = require('./controller/antiTextController.js');
-const rolesController = require('./controller/rolesController.js');
+const messageController = require('./controller/messageController.js');
+
 const Client = new  Discord.Client();
 var mysqlcon;
 var cars = ["koskesh", "jende", "kir", "kos", "haromi", "lashi", "pedarsag", "nane kose", "khaharjende", "khaharkose", "tulesag", "madaratgaidam", "sag", "kiri", "koni", "kon", "bibijende", "gaidam", "bibi", "tole", "nagaidam", "madarsag", "madar", "koskhol", "periud", "gushad", "کیری", "کصکش", "کسکش", "جنده", "کیر", "کص", "حرومی", "لاشی", "پدرسگ", "ننه جنده", "خواهر جنده", "خواهر کصه", "توله سگ", "مادرت گاییدم", "سگ", "کونی", "کون", "بی بی جنده", "گاییدم", "بی بی", "توله", "نگاییدم", "مادرسگ", "مادر", "کصخل", "کسخل", "پریود", "گشاد"];
@@ -22,6 +23,7 @@ Client.on('message', msg => {
     if (msg.channel.type !== 'text' || msg.author.bot)
         return;
     if (!msg.content.startsWith(key))
+        messageController.messageChecker(connection,msg.content);
         return;
     let command = msg.content.split(' ')[0].slice(1);
     let args = msg.content.replace('.' + command, '').trim();
@@ -69,6 +71,7 @@ Client.on('message', msg => {
             break;
         }
         default: {
+            messageController.messageChecker(connection,msg.content);
             msg.reply("Command Not Found. You Can Show Commands With " + key+"help");
         }
 
