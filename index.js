@@ -8,7 +8,7 @@ const Client = new  Discord.Client();
 var mysqlcon;
 var cars = ["koskesh", "jende", "kir", "kos", "haromi", "lashi", "pedarsag", "nane kose", "khaharjende", "khaharkose", "tulesag", "madaratgaidam", "sag", "kiri", "koni", "kon", "bibijende", "gaidam", "bibi", "tole", "nagaidam", "madarsag", "madar", "koskhol", "periud", "gushad", "کیری", "کصکش", "کسکش", "جنده", "کیر", "کص", "حرومی", "لاشی", "پدرسگ", "ننه جنده", "خواهر جنده", "خواهر کصه", "توله سگ", "مادرت گاییدم", "سگ", "کونی", "کون", "بی بی جنده", "گاییدم", "بی بی", "توله", "نگاییدم", "مادرسگ", "مادر", "کصخل", "کسخل", "پریود", "گشاد"];
 var s = 0;
-var key = "$";
+var key = "#";
 
 Client.once('ready', () => {
     connection.create(function(db) {
@@ -19,6 +19,61 @@ Client.once('ready', () => {
 });
 
 Client.on('message', msg => {
+    if (msg.channel.type !== 'text' || msg.author.bot)
+        return;
+    if (!msg.content.startsWith(key))
+        return;
+    let command = msg.content.split(' ')[0].slice(1);
+    let args = msg.content.replace('.' + command, '').trim();
+    console.log(command);
+    var replace =key+command;
+    switch (command) {
+        case 'start': {
+            channelController.start(mysqlcon,msg.guild.id,msg.guild.name,1,0,function (data) {
+                msg.channel.send(data);
+            });
+            break;
+        }
+        case 'stop': {
+            channelController.stop(mysqlcon,msg.guild.id,function (data) {
+                msg.channel.send(data);
+            });
+            break;
+        }
+        case "info":{
+            channelController.info(mysqlcon,msg.guild.id,function (data) {
+                msg.channel.send(data);
+            });
+            break;
+        }
+        case "words":{
+            antiTextController.getText(mysqlcon,msg.guild.id,function (data) {
+                msg.channel.send(data);
+            });
+            break;
+        }
+        case "ping": {
+            msg.reply(`🏓Latency is ${Date.now() - msg.createdTimestamp}ms. API Latency is ${Math.round(Client.ws.ping)}ms`);
+            break;
+        }
+        case "uptime":{
+            let days = Math.floor(Client.uptime / 86400000);
+            let hours = Math.floor(Client.uptime / 3600000) % 24;
+            let minutes = Math.floor(Client.uptime / 60000) % 60;
+            let seconds = Math.floor(Client.uptime / 1000) % 60;
+            msg.reply(`__Uptime:__\n${days}d ${hours}h ${minutes}m ${seconds}s`);
+            break;
+        }
+        case "help":{
+
+            break;
+        }
+        default: {
+            msg.reply("Command Not Found. You Can Show Commands With " + key+"help");
+        }
+
+    }
+    /*
     if(msg.content ===  key + "start") {
         channelController.start(mysqlcon,msg.guild.id,msg.guild.name,1,0,function (data) {
             msg.channel.send(data);
@@ -95,10 +150,10 @@ Client.on('message', msg => {
 
         }
     }
-    
+     */
 });
 
 
 
-Client.login('Nzk3NTQwNjUyOTg0MDQxNTIz.X_n9nQ.oQkOVzurkrQ5Qx_dJulM0nPXpwI');
+Client.login('ODAyODg1NzM5NDgxMjY4MjY0.YA1vnQ.zhA83yJ3VzukbU9rNZy4rUVjdj4');
 
