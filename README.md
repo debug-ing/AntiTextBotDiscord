@@ -7,6 +7,8 @@ You Can Run This Script For Use For alot Of Discord Server.
 
 I Will update This Project in the Future.
 
+##State: Preparing
+
 ## Feature
 
 1.Add Bot for A lot Of Servers<br>
